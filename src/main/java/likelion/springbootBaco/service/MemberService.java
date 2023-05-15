@@ -13,4 +13,4 @@ public interface MemberService {
     public Member findById(Long id);
 
     public List<Member> findAll();
-}f
+}
