@@ -5,14 +5,14 @@ spring:
     suffix: .html
     cache: false
   datasource:
-#    url: jdbc:h2:tcp://localhost/~/bacoshop
-    url: jdbc:h2:mem:bacoshop
+    url: jdbc:h2:tcp://localhost/~/bacoshop
+#    url: jdbc:h2:mem:bacoshop
     username: sa
     password:
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
