@@ -16,9 +16,7 @@ import static lombok.AccessLevel.PROTECTED;
 
 @Entity
 @Getter
-@Data
-@NoArgsConstructor
-//@NoArgsConstructor(access = PROTECTED)
+@NoArgsConstructor(access = PROTECTED)
 public class Item {
     @Id @GeneratedValue
     private Long id;

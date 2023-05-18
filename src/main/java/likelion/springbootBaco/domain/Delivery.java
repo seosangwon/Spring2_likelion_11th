@@ -1,13 +1,17 @@
 package likelion.springbootBaco.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static lombok.AccessLevel.PROTECTED;
+
 @Entity
-@NoArgsConstructor
+@NoArgsConstructor(access = PROTECTED)
 @Getter
 public class Delivery {
     @Id @GeneratedValue
@@ -19,6 +23,9 @@ public class Delivery {
     private String state;
     private String street;
     private String zipcode;
+
+    @OneToOne(mappedBy = "delivery")
+    private Order order;
 
     public enum DeliveryStatus {
         ESTABLISHED, PROGRESS, DONE
