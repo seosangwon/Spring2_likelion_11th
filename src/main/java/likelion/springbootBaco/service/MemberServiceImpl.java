@@ -17,7 +17,7 @@ public class MemberServiceImpl implements MemberService {
         this.memberRepository = memberRepository;
     }
 
-
+    @Override
     @Transactional
     public void save(Member member) {
         memberRepository.save(member);
