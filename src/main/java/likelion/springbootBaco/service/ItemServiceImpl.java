@@ -47,7 +47,9 @@ public class ItemServiceImpl implements ItemService {
             findItem.setBrand(item.getBrand());
             findItem.setName(item.getName());
             findItem.setPrice(item.getPrice());
-            findItem.setStockQuantity(item.getStockQuantity());
+            findItem.setStock(item.getStock());
+        } else {
+            throw new IllegalStateException("잘못된 요청입니다.");
         }
     }
 }

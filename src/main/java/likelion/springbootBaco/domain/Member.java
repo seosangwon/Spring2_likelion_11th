@@ -23,9 +23,13 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Order> orderList = new ArrayList<>();
 
-    private String city;
-    private String state;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
 
+    public static Member createMember(String name, Address address) {
+        Member member = new Member();
+        member.name = name;
+        member.address = address;
+        return member;
+    }
 }
