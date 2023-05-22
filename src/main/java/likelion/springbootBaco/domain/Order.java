@@ -43,10 +43,6 @@ public class Order {
         member.getOrderList().add(this);
     }
 
-    public void setDelivery(Delivery delivery) {
-        this.delivery = delivery;
-    }
-
     public static Order createOrder(Member member, OrderItem... orderItems) {
         Order order = new Order();
         order.setMember(member);

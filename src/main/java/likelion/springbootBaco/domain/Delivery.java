@@ -19,6 +19,9 @@ public class Delivery {
     @Id @GeneratedValue
     private Long id;
 
+    @OneToOne(mappedBy = "delivery")
+    private Order order;
+
     @Enumerated(STRING)
     private DeliveryStatus deliveryStatus;
 
@@ -26,9 +29,6 @@ public class Delivery {
     private String state;
     private String street;
     private String zipcode;
-
-    @OneToOne(mappedBy = "delivery")
-    private Order order;
 
     public static Delivery createDelivery(Order order, String city, String state, String street, String zipcode) {
         Delivery delivery = new Delivery();
